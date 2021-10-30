@@ -1,9 +1,9 @@
 class Point:
     def __init__(self, x, y, a, b):
-        self.a = a
-        self.b = b
         self.x = x
         self.y = y
+        self.a = a
+        self.b = b
 
         # That is infinite case, (identity of addition)
         if self.x is None and self.y is None:
@@ -37,7 +37,7 @@ class Point:
         # if add same point
         if self == other:
             # when 'y=0' then return identity of addition
-            if self.y == 0:
+            if self.y == 0 * self.x:
                 return self.__class__(None, None, self.a, self.b)
 
             else:

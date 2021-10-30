@@ -16,7 +16,7 @@ class FieldElement:
         return self.num == other.num and self.prime == other.prime
 
     def __ne__(self, other):
-        return not (self == other)
+        return not(self == other)
 
     def __add__(self, other):
         if self.prime != other.prime:
@@ -41,7 +41,7 @@ class FieldElement:
 
     def __pow__(self, exponent):
         n = exponent % (self.prime - 1)
-        num = pow(self.num, n) % self.prime
+        num = pow(self.num, n, self.prime)
         return self.__class__(num, self.prime)
 
     def __truediv__(self, other):
