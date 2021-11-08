@@ -52,3 +52,16 @@ class Point:
         new_y = s * (self.x - new_x) - self.y
 
         return self.__class__(new_x, new_y, self.a, self.b)
+
+    def __rmul__(self, coefficient):
+        coef = coefficient
+        current = self
+        result = self.__class__(None, None, self.a, self.b)
+
+        while coef:
+            if coef & 1:
+                result += current
+            current += current
+            coef >>= 1
+
+        return result
