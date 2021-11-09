@@ -39,6 +39,10 @@ class FieldElement:
         num = (self.num * other.num) % self.prime
         return self.__class__(num, self.prime)
 
+    def __rmul__(self, coefficient):
+        num = (self.num * coefficient) % self.prime
+        return self.__class__(num=num, prime=self.prime)
+
     def __pow__(self, exponent):
         n = exponent % (self.prime - 1)
         num = pow(self.num, n, self.prime)

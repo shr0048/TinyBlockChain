@@ -11,6 +11,12 @@ class Point:
         if self.y ** 2 != self.x ** 3 + a * x + b:
             raise ValueError(f'{x}, {y} is not on the curve')
 
+    def __repr__(self):
+        if self.x is None:
+            return 'Point(infinity)'
+        else:
+            return 'Point({},{})_{}'.format(self.x.num, self.y.num, self.x.prime)
+
     def __eq__(self, other):
         return self.x == other.x and \
                self.y == other.y and \

@@ -1,4 +1,4 @@
-from maths import FiniteField, curve
+from ecc import FiniteField, Curve
 
 if __name__ == '__main__':
     prime = 223
@@ -14,14 +14,14 @@ if __name__ == '__main__':
         try:
             points.append(
                 (
-                    curve.Point(FiniteField.FieldElement(coordinate_1[0], prime),
-                            FiniteField.FieldElement(coordinate_1[1], prime),
-                            a, b
-                            ),
-                    curve.Point(FiniteField.FieldElement(coordinate_2[0], prime),
-                             FiniteField.FieldElement(coordinate_2[1], prime),
-                             a, b
-                             )
+                    Curve.Point(FiniteField.FieldElement(coordinate_1[0], prime),
+                                FiniteField.FieldElement(coordinate_1[1], prime),
+                                a, b
+                                ),
+                    Curve.Point(FiniteField.FieldElement(coordinate_2[0], prime),
+                                FiniteField.FieldElement(coordinate_2[1], prime),
+                                a, b
+                                )
                 )
             )
 
